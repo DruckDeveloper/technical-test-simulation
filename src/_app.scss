@@ -1,0 +1,17 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+
+  h1 {
+    font-size: 2em;
+    padding: 1em 0;
+  }
+
+  h2 {
+    font-size: 1.3em;
+    padding: 1em 0;
+  }
+}

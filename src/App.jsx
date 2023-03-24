@@ -1,7 +1,7 @@
 // Hooks
 import { useState, useEffect } from 'react'
 // Constants
-import { FACT_CAT_API, CAT__PREFIX_URL } from './constants/constants'
+import { IMAGE_CAT_API, FACT_CAT_API, CAT__PREFIX_URL } from './constants/constants'
 
 const App = () => {
   const [fact, setFact] = useState('')
@@ -17,8 +17,9 @@ const App = () => {
         setFact(json.fact)
 
         const firstFactWord = json.fact.split(' ')[0]
-        const res2 = await fetch(`https://cataas.com/cat/says/${firstFactWord}?size=50&color=red&json=true`)
+        const res2 = await fetch(IMAGE_CAT_API(`${firstFactWord}`))
         const json2 = await res2.json()
+
         if (!ignore) {
           setCatImageUrl(json2.url)
         }
@@ -35,11 +36,11 @@ const App = () => {
   }, [])
 
   return (
-    <>
+    <main className='app'>
       <h1>App de gatitos</h1>
       {fact ? <h2>{fact}</h2> : <p>Loading</p>}
       {catImageUrl ? <img src={`${CAT__PREFIX_URL}${catImageUrl}`} alt='Imagen de un gato con un mensaje' /> : <p>Loading</p>}
-    </>
+    </main>
   )
 }
 

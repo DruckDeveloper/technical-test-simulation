@@ -1,0 +1,11 @@
+@use './reset';
+@use '../app';
+
+#root {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #191919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
