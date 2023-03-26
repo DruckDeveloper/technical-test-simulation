@@ -1,5 +1,7 @@
+// Fetch custom hooks
 import useFact from './hooks/useFact'
 import useCatImage from './hooks/useCatImage'
+// url for generated cat image
 import { CAT__PREFIX_URL } from './constants/constants'
 
 const App = () => {
